@@ -1,0 +1,7 @@
+DROP DATABASE IF EXISTS CourseArchives;
+CREATE DATABASE CourseArchives;
+
+DROP USER IF EXISTS admin;
+CREATE USER admin WITH PASSWORD 'pass';
+
+GRANT ALL PRIVILEGES ON DATABASE CourseArchives TO CourseArchives;
