@@ -6,6 +6,7 @@ CREATE TABLE Departments (
 
 CREATE TABLE Students (
 	rcs_id VARCHAR(7) PRIMARY KEY,
+	password VARCHAR(127) NOT NULL,
 	first_name VARCHAR(127) NOT NULL,
 	last_name VARCHAR(127) NOT NULL,
 	dept_code CHAR(4),
@@ -16,23 +17,23 @@ CREATE TABLE Courses (
 	course_id INT PRIMARY KEY,
 	course_name VARCHAR(127),
 	dept_code CHAR(4),
-	FOREIGN KEY (dept_code) REFERENCES Departments(dept_code),
 	semester_year INT NOT NULL,
-	semester_season INT NOT NULL
+	semester_season INT NOT NULL,
+	FOREIGN KEY (dept_code) REFERENCES Departments(dept_code)
 );
 
 CREATE TABLE Papers (
 	course_id INT,
-	FOREIGN KEY (course_id) REFERENCES Courses(course_id),
 	rcs_id VARCHAR(127),
-	FOREIGN KEY (rcs_id) REFERENCES Students(rcs_id),
 	title_name VARCHAR(127) NOT NULL,
 	type_name VARCHAR(127) NOT NULL,
 	grade_percentage decimal,
 	professor_first_name VARCHAR(127) NOT NULL,
 	professor_last_name VARCHAR(127) NOT NULL,
 	paper_year INT NOT NULL,
-	doc_link VARCHAR(127) NOT NULL
+	doc_link VARCHAR(127) NOT NULL,
+	FOREIGN KEY (course_id) REFERENCES Courses(course_id),
+	FOREIGN KEY (rcs_id) REFERENCES Students(rcs_id)
 );
 
 INSERT INTO departments VALUES ('ITWS', 'Information Technology & Web Science', 'Science');
