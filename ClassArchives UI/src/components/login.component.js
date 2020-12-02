@@ -57,45 +57,53 @@ searchUser() {
     return (
       <div className="submit-form">
         {this.state.loginvalue ? (
-          <div class="container">
-            <div class="row justify-content-center">
-              <h3> Welcome {this.state.searchUser}! Please select an option </h3>
-              <br/>
-            </div>
-            <div class="row justify-content-center">
+          <div className="card card-2">
+            <div class="card-heading"></div>
+            <div class="card-body">
+              <h3> Welcome {this.state.searchUser}!</h3>
               <button className="btn btn-success" >
                 <Link to = {"/add"} params={{ testvalue: "hello" }} style={{ textDecoration: 'none', color: "white"}}>
                   Add Paper
                 </Link>
               </button>
-              <button className="btn btn-success" >
-                <Link to = {"/view"} style={{ textDecoration: 'none', color: "white"}}>
+              <button class="btn btn--radius btn--green">
+                <Link to = {"/search"} style={{ textDecoration: 'none', color: "white"}}>
                   Find Paper
                 </Link>
               </button>
             </div>
           </div>
         ) : (
-          <div className="submit-form">
-            <h3> Login to existing account, or click on Sign Up to establish a new free account </h3>
-            <div>
-              <div className="form-group">
-                <label htmlFor="title">Username</label>
-                <input type="text" className="form-control" maxLength="7" placeholder="Enter Username" value={searchUser} onChange={this.onChangesearchUser}/>
+          <div class="card card-2">
+            <div class="card-heading"></div>
+              <div class="card-body">
+              <h3> Instructions</h3>
+              <p>
+                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
+                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
+                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
+                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
+              </p>
+              <h3> Login to existing account</h3>
+
+              <div class="input-group">
+                <input type="text" class="input--style-2" placeholder="Enter RCS ID" maxLength="7" value={searchUser} onChange={this.onChangesearchUser}/>
               </div>
-              <div className="form-group">
-                <label htmlFor="description">Password</label>
-                <input type="password" className="form-control" id="password" maxLength="127" required value={this.state.password} onChange={this.onChangePassword} name="password" />
+
+              <div className="input-group">
+                <input type="password" class="input--style-2" placeholder="Password" id="password" maxLength="127" required value={this.state.password} onChange={this.onChangePassword} name="password" />
               </div>
 
               <button onClick={this.searchUser} className="btn btn-success">
                 Login
               </button>
-              <button className="btn btn-success button">
-              <Link to = {"/create"} style={{ textDecoration: 'none', color: "white"}}>
-                Sign Up
-              </Link>
-              </button>
+
+              <div>
+              Not Registered? &nbsp;
+                <Link to = {"/create"} style={{ textDecoration: 'none', color: "green"}}>
+                  Sign Up Now
+                </Link>
+              </div>
 
             </div>
           </div>

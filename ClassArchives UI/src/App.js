@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Home from "./components/home.component";
 import LoginStudent from "./components/login.component";
 import CreateStudent from "./components/createStudent.component";
 import AddPapers from "./components/addPapers.component";
+import SearchPapers from "./components/findPapers.component";
 
 class App extends Component {
 
@@ -32,13 +32,10 @@ class App extends Component {
 
           <div className="container mt-3">
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={LoginStudent} />
+              <Route exact path="/" component={LoginStudent} />
               <Route exact path="/create" component={CreateStudent} />
               <Route exact path="/add" component={AddPapers} />
-              {/* A JSX comment
-              <Route exact path="/view" component={ViewPapers} />
-              */}
+              <Route exact path="/search" component={SearchPapers} />
             </Switch>
           </div>
         </div>
