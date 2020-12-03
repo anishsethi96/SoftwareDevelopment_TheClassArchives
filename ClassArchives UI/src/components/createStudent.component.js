@@ -81,7 +81,7 @@ export default class CreateStudent extends Component {
           <div class="card-body">
             <h2> Account created </h2>
             <br/>
-            <button class="btn btn--radius btn--green">
+            <button class="btn btn--radius btn--red">
             <Link to = {"/"} params={{ testvalue: "hello" }} style={{ textDecoration: 'none', color: "white"}}>
               Login Now
             </Link>
@@ -114,7 +114,7 @@ export default class CreateStudent extends Component {
               <input type="text" class="input--style-2" placeholder="Department Code" id="dept_code" maxLength="4" required value={this.state.dept_code} onChange={this.onChangeDeptCode} name="dept_code"/>
             </div>
 
-            <button onClick={this.saveStudentInfo} class="btn btn--radius btn--green">
+            <button onClick={this.saveStudentInfo} class="btn btn--radius btn--red">
               Submit
             </button>
           </div>

@@ -79,11 +79,11 @@ searchUser() {
               <div class="card-body">
               <h3> Instructions</h3>
               <p>
-                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
-                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
-                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
-                Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock Testblock
-              </p>
+			  1. Create an account if you don't have one<br></br>
+			  2. Login<br></br>
+			  3. Filter by your criteria<br></br>
+			  4. Select any of the available archived papers<br></br>
+			  </p>
               <h3> Login to existing account</h3>
 
               <div class="input-group">
@@ -94,13 +94,13 @@ searchUser() {
                 <input type="password" class="input--style-2" placeholder="Password" id="password" maxLength="127" required value={this.state.password} onChange={this.onChangePassword} name="password" />
               </div>
 
-              <button onClick={this.searchUser} className="btn btn-success">
+              <button onClick={this.searchUser} className="btn btn-success" class="btn btn--radius btn--red">
                 Login
               </button>
 
               <div>
               Not Registered? &nbsp;
-                <Link to = {"/create"} style={{ textDecoration: 'none', color: "green"}}>
+                <Link to = {"/create"} style={{ textDecoration: 'none', color: "r"}}>
                   Sign Up Now
                 </Link>
               </div>
