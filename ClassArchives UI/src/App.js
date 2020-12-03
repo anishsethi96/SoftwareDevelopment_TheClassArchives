@@ -13,12 +13,12 @@ class App extends Component {
   callbackFunction = (childData) => {
         this.setState({message: "User ID - " + childData})
   }
-
+	
   render() {
     return (
       <Router>
         <div>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark main-nav">
+        <nav class="navbar navbar-expand-sm navbar-light navbar-transparent main-nav">
             <div class="container justify-content-center">
                 <ul class="nav navbar-nav flex-fill justify-content-center">
                     <li class="nav-item">
