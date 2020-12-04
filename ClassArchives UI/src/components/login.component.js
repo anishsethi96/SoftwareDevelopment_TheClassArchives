@@ -34,6 +34,10 @@ searchUser() {
     password: this.state.password,
   };
 
+  if (this.state.password === '' || this.state.searchUser === ''){
+    alert("Username or Password Incorrect")
+  }
+
   console.log(this.state.searchUser);
 
   LoginDataService.get(this.state.searchUser)
@@ -45,7 +49,10 @@ searchUser() {
         this.setState({
           loginvalue: true
         });
-    }
+      }
+      else{
+        alert("Username or Password Incorrect")
+      }
     })
     .catch(e => {
       console.log(e);
@@ -79,11 +86,11 @@ searchUser() {
               <div class="card-body">
               <h3> Instructions</h3>
               <p>
-			  1. Create an account if you don't have one<br></br>
-			  2. Login<br></br>
-			  3. Filter by your criteria<br></br>
-			  4. Select any of the available archived papers<br></br>
-			  </p>
+        			  1. Create an account if you don't have one<br></br>
+        			  2. Login<br></br>
+        			  3. Filter by your criteria<br></br>
+        			  4. Select any of the available archived papers<br></br>
+        			</p>
               <h3> Login to existing account</h3>
 
               <div class="input-group">

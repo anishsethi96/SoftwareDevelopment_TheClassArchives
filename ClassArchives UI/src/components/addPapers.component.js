@@ -98,6 +98,12 @@ export default class AddPapers extends Component {
   doc_link: this.state.doc_link
   };
 
+  if( this.state.rcs_id === '' || this.state.course_id === '' || this.state.title_name === ''
+      || this.state.type_name === '' || this.state.doc_link === '' || this.state.paper_year === ''){
+    alert('Please fill all fields');
+    return;
+  }
+
   CreatePaperDataService.create(data)
   this.setState({submitted: true});
   window.location.reload(false);

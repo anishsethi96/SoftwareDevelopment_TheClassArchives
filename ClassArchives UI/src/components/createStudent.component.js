@@ -52,21 +52,20 @@ export default class CreateStudent extends Component {
     });
   }
 
-  onChangeCompany(e) {
-    this.setState({
-      company_name: e.target.value
-    });
-  }
-
   saveStudentInfo() {
     var data = {
       rcs_id: this.state.rcs_id,
       password: this.state.password,
       first_name: this.state.first_name,
       last_name: this.state.last_name,
-      dept_code: this.state.dept_code,
-      company_name: this.state.company_name
-    };
+      dept_code: this.state.dept_code
+      };
+
+    if( this.state.rcs_id === '' || this.state.password === '' || this.state.first_name === ''
+        || this.state.last_name === '' || this.state.dept_code === '' || this.state.rcs_id === ''){
+      alert('Please fill all fields');
+      return;
+    }
 
     CreateStudentDataService.create(data)
     this.setState({submitted: true});

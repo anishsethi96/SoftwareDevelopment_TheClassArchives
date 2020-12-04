@@ -38,9 +38,16 @@ export default class SearchPapers extends Component {
         this.setState({
           papers: response.data
         });
+
+        if (response.data = []){
+          alert('Course not available ');
+          return;
+        }
+
         console.log(response.data);
       })
       .catch(e => {
+        alert('Enter Course ID');
         console.log(e);
       });
   }
